@@ -20,7 +20,7 @@ controls.target.set(16, 0, 16);
 const scene = new THREE.Scene();
 
 const geo = new THREE.PlaneGeometry(1000, 1000, 700, 700);
-let h_map = new THREE.TextureLoader().setPath("../public/").load("image.png");
+let h_map = new THREE.TextureLoader().setPath("../public/").load("img5.jpg");
 
 const mat = new THREE.MeshStandardMaterial({
   color: 0x000000,
