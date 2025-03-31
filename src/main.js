@@ -19,10 +19,20 @@ controls.target.set(16, 0, 16);
 // Scene setup
 const scene = new THREE.Scene();
 
-const geometry = new THREE.BoxGeometry();
-const material = new THREE.MeshLambertMaterial({ color: 0x00d000});
+const geo = new THREE.PlaneGeometry(1000, 1000, 700, 700);
+let h_map = new THREE.TextureLoader().setPath("../public/").load("image.png");
 
-scene.add(new THREE.Mesh(geometry, material));
+const mat = new THREE.MeshStandardMaterial({
+  color: 0x000000,
+  wireframe: true,
+  displacementMap: h_map,
+  displacementScale: 100
+})
+
+const mesh = new THREE.Mesh(geo, mat);
+scene.add(mesh);
+
+scene.add(new THREE.Mesh(geo, mat));
 
 // TODO: Add terrain mesh to scene here
 
